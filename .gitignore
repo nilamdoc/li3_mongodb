@@ -1,2 +1,2 @@
-libraries/*
-resources/tmp/*
+app/libraries/*
+app/resources/tmp/*

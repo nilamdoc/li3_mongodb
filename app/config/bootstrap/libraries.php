@@ -120,9 +120,9 @@ Libraries::add('app', array('default' => true));
 /**
  * Add some plugins:
  */
- Libraries::add('li3_docs', array(
-    'index' => array('app')
-));
+//Libraries::add('li3_docs', array(
+//    'index' => array('app')
+//));
  Libraries::add('li3_show');
 
 ?>
