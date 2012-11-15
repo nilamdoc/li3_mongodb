@@ -13,6 +13,26 @@ class QueriesController extends \lithium\action\Controller {
 	public function index() {
 
 	}
+	public function original(){
+		Users::remove();	
+		$data = array('age'=>51,'name'=>'Nilam Doctor','user_id'=>1,'status'=>'C');
+		$users = Users::create();
+		$users->save($data);
+		$data = array('age'=>49,'name'=>'Parimal Doctor','user_id'=>2,'status'=>'B');
+		$users = Users::create();
+		$users->save($data);		
+		$data = array('age'=>32,'name'=>'Ruchi Jain','user_id'=>3,'status'=>'A');
+		$users = Users::create();
+		$users->save($data);
+		$data = array('age'=>18,'name'=>'Hitarth Doctor','user_id'=>4,'status'=>'D');
+		$users = Users::create();
+		$users->save($data);		
+		$users = Users::find('all');
+		$this->render(array('head' => false,'template'=>'insert','data'=>compact('users','mysql','mongo','lithium')));
+
+
+	}
+
 	public function insert(){
 		$users = Users::create();
 		if (($this->request->data) && $users->save($this->request->data)) {
@@ -386,6 +406,25 @@ $data = array('$inc' => array('age' => 3));
 
 		));					
 		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+	}
+
+	public function db_users_find_23(){
+		$mysql = $this->request->data['mysql'];
+		$mongo = $this->request->data['mongo'];		
+		$lithium = "
+Users::remove(
+	array('status'=>'D')
+);
+";
+		Users::remove(
+				array('status'=>'D')
+					);
+		$users = Users::find('all');
+		$this->render(
+			array('head' => false,'template'=>'db_users_find',
+				  'data'=>compact('users','mysql','mongo','lithium')
+				)
+			);
 	}
 
 

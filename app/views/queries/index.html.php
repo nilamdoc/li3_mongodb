@@ -1,23 +1,48 @@
+<a href="queries"><strong>SQL to MongoDB</strong> </a>
+<a href="aggregations">SQL to Aggregation </a>
 <h5>Reference <a href="http://docs.mongodb.org/manual/reference/sql-comparison/" target="_blank">http://docs.mongodb.org/manual/reference/sql-comparison/</a></h5>
-<h4>Insert Records</h4>
+<div>
+	<div style="float:left;width:48% ">
+	<h4>Insert Records</h4>
+	<?php
+		echo $this->form->create('',array('url'=>'/queries/Insert'));
+		
+		echo $this->form->label('Name');	
+		echo $this->form->input('name',array('placeholder'=>'any name'));
+		echo $this->form->label('Age');
+			$age = array(18=>18,19=>19,20=>20,21=>21,22=>22,50=>50,51=>51,60=>60);
+		echo $this->form->select('age',$age);
+		echo $this->form->label('User Id');	
+		echo $this->form->input('user_id',array('placeholder'=>'any number'));
+			$status = array('A'=>'A','B'=>'B','C'=>'C','D'=>'D');
+		echo $this->form->label('Status');		
+		echo $this->form->select('status',$status);		
+		echo "";
+		echo $this->form->submit('Insert');	
+		echo $this->form->end();
+		
+	?>
+	</div>
+	<div style="float:left;width:48% ">
+		<h4>Default records</h4>
+		<?php	
+		echo $this->form->create('',array('url'=>'/queries/Original'));
+		?>
+		Structure used for default records
+		<pre>{
+   "_id": ObjectId("50a361309d5d0c6c0c000001"),
+   "age": NumberInt(50),
+   "name": "Nilam Doctor",
+   "status": "C",
+   "user_id": NumberInt(1)
+}</pre><br>
 <?php
-	echo $this->form->create('',array('url'=>'/queries/Insert'));
-	
-	echo $this->form->label('Name');	
-	echo $this->form->input('name',array('placeholder'=>'any name'));
-	echo $this->form->label('Age');
-		$age = array(18=>18,19=>19,20=>20,21=>21,22=>22,50=>50,51=>51,60=>60);
-	echo $this->form->select('age',$age);
-	echo $this->form->label('User Id');	
-	echo $this->form->input('user_id',array('placeholder'=>'any number'));
-		$status = array('A'=>'A','B'=>'B','C'=>'C','D'=>'D');
-	echo $this->form->label('Status');		
-	echo $this->form->select('status',$status);		
-	echo "";
-	echo $this->form->submit('Insert');	
-	echo $this->form->end();
-	
-?>
+		echo $this->form->submit('Insert');	
+		echo $this->form->end();
+		?>
+	</div>
+</div>
+<div style="float:left ">
 <h4>Find Records</h4>
 <table>
 	<thead>
@@ -590,18 +615,37 @@ db.users.update(
 	</tbody>
 </table>
 
+<h4>Delete Records</h4>
+<table>
+	<thead>
+		<th>SQL SELECT Statements</th>
+		<th>MongoDB find() Statements</th>
+		<th>Link</th>
+	</thead>
+	<tbody>
+<?php
+	$mysql = '
 DELETE FROM users
 WHERE status = "D"
-
-	
-
+';
+	$mongo = '
 db.users.remove( { status: "D" } )
+';
+?>		
+		<tr>
+			<td><?=$mysql?></td>
+			<td><?=$mongo?></td>
+			<td>
+			<?php
+				echo $this->form->create('',array('url'=>'/queries/db_users_find_23'));
+				echo $this->form->submit('Check');
+				echo $this->form->hidden('mysql',array('value'=>$mysql));
+				echo $this->form->hidden('mongo',array('value'=>$mongo));
+				echo $this->form->end();
+			?>
+			</td>		
+		</tr>		
 
-	See remove() for more information.
-
-DELETE FROM users
-
-	
-
-db.users.remove( )
-
+	</tbody>
+</table>
+</div>
