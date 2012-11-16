@@ -15,7 +15,9 @@
 	</thead>
 	<tbody>
 <?php 
-print_r($orders['result']);
+//echo "<pre>";
+//print_r($orders['result']);
+//echo "</pre>";
 	foreach($orders['result'] as $o){
 ?><tr>
 	<td><?=$o['_id'];?><?=$o['_id']['cust_id'];?></td>
