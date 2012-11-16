@@ -28,9 +28,8 @@ class QueriesController extends \lithium\action\Controller {
 		$users = Users::create();
 		$users->save($data);		
 		$users = Users::find('all');
-		$this->render(array('head' => false,'template'=>'insert','data'=>compact('users','mysql','mongo','lithium')));
-
-
+		$this->render(array('head' => false,'template'=>'insert',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function insert(){
@@ -38,7 +37,8 @@ class QueriesController extends \lithium\action\Controller {
 		if (($this->request->data) && $users->save($this->request->data)) {
 			
 			$users = Users::find('all');
-			$this->render(array('head' => false,'template'=>'insert','data'=>compact('users','mysql','mongo','lithium')));
+			$this->render(array('head' => false,'template'=>'insert',
+			'data'=>compact('users','mysql','mongo','lithium')));
 		}
 
 	}
@@ -47,7 +47,8 @@ class QueriesController extends \lithium\action\Controller {
 		$mongo = $this->request->data['mongo'];		
 		$lithium = "Users::find('all');";
 		$users = Users::find('all');
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 
 	}
 	public function db_users_find_1(){
@@ -59,7 +60,8 @@ class QueriesController extends \lithium\action\Controller {
 		$users = Users::find('all', array(
 			'fields'=>array('_id','user_id','status')
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_2(){
@@ -72,7 +74,8 @@ Users::find('all', array(
 		$users = Users::find('all', array(
 			'fields'=>array('user_id','status','_id'=>0),
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_3(){
@@ -85,7 +88,8 @@ Users::find('all', array(
 		$users = Users::find('all', array(
 			'conditions'=>array('status'=>'A'),
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_4(){
@@ -100,7 +104,8 @@ Users::find('all', array(
 			'fields'=>array('user_id','status','_id'=>0),
 			'conditions'=>array('status'=>'A'),
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_5(){
@@ -113,7 +118,8 @@ Users::find('all', array(
 		$users = Users::find('all', array(
 			'conditions'=>array('status'=>array('$ne'=>'A')),
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_6(){
@@ -126,7 +132,8 @@ Users::find('all', array(
 		$users = Users::find('all', array(
 			'conditions'=>array('status'=>'A','age'=>50),
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_7(){
@@ -149,7 +156,8 @@ Users::find('all', array(
 						)
 					)
 				));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_8(){
@@ -167,7 +175,8 @@ Users::find('all', array(
         		    	'age' => array('$gt' => 25)
 					)
 				));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_9(){
@@ -185,7 +194,8 @@ Users::find('all', array(
         		    	'age' => array('$lt' => 25)
 					)
 				));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_10(){
@@ -203,7 +213,8 @@ Users::find('all', array(
         		    	'age' => array('$lt' => 50, '$gt' => 25)
 					)
 				));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_11(){
@@ -221,7 +232,8 @@ Users::find('all', array(
         		    	'name' => array('like'=>'/Pa/')
 					)
 				));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_12(){
@@ -239,7 +251,8 @@ Users::find('all', array(
         		    	'name' => array('like'=>'/^Ru/')
 					)
 				));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_13(){
@@ -255,7 +268,8 @@ Users::find('all', array(
 			'conditions'=>array('status'=>'A'),
 			'order'=>array('user_id'=>'ASC')
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_14(){
@@ -271,7 +285,8 @@ Users::find('all', array(
 			'conditions'=>array('status'=>'A'),
 			'order'=>array('user_id'=>'DESC')
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_15(){
@@ -283,8 +298,10 @@ or
 Users::count();
 ";
 		$users = Users::find('count');
-		$this->render(array('head' => false,'template'=>'db_users_count','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_count',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
+	
 	public function db_users_find_16(){
 		$mysql = $this->request->data['mysql'];
 		$mongo = $this->request->data['mongo'];		
@@ -296,7 +313,8 @@ Users::find('count', array(
 		$users = Users::find('count', array(
 			'conditions'=>array('user_id'=> array('$exists'=>true))
 		));
-		$this->render(array('head' => false,'template'=>'db_users_count','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_count',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_17(){
@@ -309,7 +327,8 @@ Users::find('count', array(
 		$users = Users::find('count', array(
 			'conditions'=>array('age'=> array('$gt'=>30))
 		));
-		$this->render(array('head' => false,'template'=>'db_users_count','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_count',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_18(){
@@ -325,7 +344,8 @@ Users::connection()->connection->command(array(
     		'distinct' => 'users',
 	    	'key' => 'status',
 		));		
-		$this->render(array('head' => false,'template'=>'db_users_distinct','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_distinct',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_19(){
@@ -337,7 +357,8 @@ Users::connection()->connection->command(array(
 		$users = Users::find('all', array(
 			'limit'=>1
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_20(){
@@ -351,7 +372,8 @@ Users::connection()->connection->command(array(
 			'limit'=>1,
 			'offset'=>2
 		));
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_21(){
@@ -377,7 +399,8 @@ Users::connection()->connection->command(array(
 				'age' => array('$gt' => 25)
 			)
 		));					
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 
@@ -405,7 +428,8 @@ $data = array('$inc' => array('age' => 3));
 			 'conditions' => array(	'status' => 'A'),
 
 		));					
-		$this->render(array('head' => false,'template'=>'db_users_find','data'=>compact('users','mysql','mongo','lithium')));
+		$this->render(array('head' => false,'template'=>'db_users_find',
+		'data'=>compact('users','mysql','mongo','lithium')));
 	}
 
 	public function db_users_find_23(){

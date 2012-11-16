@@ -42,9 +42,12 @@ use lithium\data\Connections;
  */
  Connections::add('default', array(
  	'type' => 'MongoDb',
- 	'host' => 'localhost',
- 	'database' => 'li3_mongo'
+ 	'host' => 'localhost:27017',
+ 	'database' => 'li3_mongo',
  ));
+
+//mongo ds043057.mongolab.com:43057/li3_mongo -u <dbuser> -p <dbpassword>
+
 
 /**
  * Uncomment this configuration to use CouchDB as your default database.

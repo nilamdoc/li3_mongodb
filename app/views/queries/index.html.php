@@ -28,14 +28,14 @@
 		<?php	
 		echo $this->form->create('',array('url'=>'/queries/Original'));
 		?>
-		Structure used for default records
+		One collection `users` that contain documents of the following prototype:
 		<pre>{
    "_id": ObjectId("50a361309d5d0c6c0c000001"),
    "age": NumberInt(50),
    "name": "Nilam Doctor",
    "status": "C",
    "user_id": NumberInt(1)
-}</pre><br>
+}</pre>
 <?php
 		echo $this->form->submit('Insert');	
 		echo $this->form->end();
