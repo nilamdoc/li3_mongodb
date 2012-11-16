@@ -15,12 +15,12 @@
 	</thead>
 	<tbody>
 <?php 
-//print_r($orders['result']);
+print_r($orders['result']);
 	foreach($orders['result'] as $o){
 ?><tr>
 	<td><?=$o['_id'];?><?=$o['_id']['cust_id'];?></td>
 	<td><?php 
-	$date = $o['ord_date'];
+	$date = $o['_id']['ord_date'];
 
 	echo date('Y-M-d',$date->sec);?></td>				
 	<td><?=$o['count'];?><?=$o['total'];?><?=$o['qty'];?></td>
