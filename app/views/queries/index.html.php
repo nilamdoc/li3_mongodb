@@ -56,8 +56,8 @@
 	$mongo = 'db.users.find()';
 ?>
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find'));
@@ -77,8 +77,8 @@ FROM users';
 )';
 ?>
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_1'));
@@ -99,8 +99,8 @@ db.users.find(
 )';
 ?>
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_2'));
@@ -123,8 +123,8 @@ db.users.find(
 ';
 ?>
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_3'));
@@ -146,8 +146,8 @@ db.users.find(
     { user_id: 1, status: 1, _id: 0 }
 )';
 ?>		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_4'));
@@ -168,8 +168,8 @@ db.users.find(
     { status: { $ne: "A" } }
 )';
 ?>		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_5'));
@@ -194,8 +194,8 @@ db.users.find(
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_6'));
@@ -220,8 +220,8 @@ db.users.find(
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_7'));
@@ -245,8 +245,8 @@ db.users.find(
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_8'));
@@ -270,8 +270,8 @@ db.users.find(
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_9'));
@@ -296,8 +296,8 @@ db.users.find(
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_10'));
@@ -320,8 +320,8 @@ db.users.find(
 )';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_11'));
@@ -344,8 +344,8 @@ db.users.find(
 )';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_12'));
@@ -368,8 +368,8 @@ db.users.find( { status: "A" } ).sort( { user_id: 1 } )
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_13'));
@@ -392,8 +392,8 @@ db.users.find( { status: "A" } ).sort( { user_id: -1 } )
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_14'));
@@ -414,8 +414,8 @@ db.users.count()
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_15'));
@@ -438,8 +438,8 @@ db.users.find( { user_id: { $exists: true } } ).count()
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_16'));
@@ -463,8 +463,8 @@ db.users.find( { age: { $gt: 30 } } ).count()
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_17'));
@@ -484,8 +484,8 @@ FROM users
 db.users.distinct( "status" )';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_18'));
@@ -511,8 +511,8 @@ db.users.find().limit(1)
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_19'));
@@ -534,8 +534,8 @@ SKIP 2
 db.users.find().limit(1).skip(2)';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_20'));
@@ -573,8 +573,8 @@ db.users.update(
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_21'));
@@ -600,8 +600,8 @@ db.users.update(
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_22'));
@@ -633,8 +633,8 @@ db.users.remove( { status: "D" } )
 ';
 ?>		
 		<tr>
-			<td><?=$mysql?></td>
-			<td><?=$mongo?></td>
+			<td><pre><?=$mysql?></pre></td>
+			<td><pre><?=$mongo?></pre></td>
 			<td>
 			<?php
 				echo $this->form->create('',array('url'=>'/queries/db_users_find_23'));
