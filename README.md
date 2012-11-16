@@ -29,9 +29,13 @@ http://localhost/li3_mongodb/aggregations will show the queries from http://docs
 
 Requirements:
 ====
+
 PHP 5.3+
+
 MongoDB 2.2.1+
+
 PHP extension 	mongo/1.3.0RC1   `https://github.com/mongodb/mongo-php-driver/downloads`
+
 Database:
 
     li3_mongo 
