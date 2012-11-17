@@ -49,3 +49,7 @@ Additional Libraries
 ====
 
 You can also use `https://github.com/nilamdoc/li3_show` as a library to include in your project. This will show runtime execution of the query result in a table rather than a `vardump` or `print_r($query)`.
+
+Import DB
+====
+You can import mongo-li3_mongo.js to the li3_mongo database.
