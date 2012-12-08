@@ -142,7 +142,7 @@ Users::find('all', array(
 		$lithium = "
 Users::find('all', array(
 	 'conditions' => array(
-		'$or' => array(
+		'\$or' => array(
 			array('status' => 'A'),
 			array('age' => 50)
 		)
